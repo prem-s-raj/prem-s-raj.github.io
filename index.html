@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prem S Rajanampalle — Researcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --text: #1a1a18;
+            --muted: #5a5a54;
+            --faint: #9a9a92;
+            --rule: #d8d8d0;
+            --bg: #faf9f6;
+            --link: #2a4a8a;
+            --accent: #8a3a2a;
+            --font-body: 'EB Garamond', Georgia, serif;
+            --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+            --max: 680px;
+        }
+
+        html {
+            font-size: 18px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0 1.5rem;
+        }
+
+        /* ── Layout ── */
+        .site {
+            max-width: var(--max);
+            margin: 0 auto;
+        }
+
+        /* ── Nav ── */
+        nav {
+            display: flex;
+            gap: 1.8rem;
+            padding: 2.2rem 0 1.6rem;
+            border-bottom: 1px solid var(--rule);
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            align-items: baseline;
+        }
+
+        nav .name {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text);
+            text-decoration: none;
+            margin-right: auto;
+            letter-spacing: 0.01em;
+        }
+
+        nav a {
+            font-size: 0.83rem;
+            font-family: var(--font-mono);
+            color: var(--muted);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        nav a:hover {
+            color: var(--link);
+        }
+
+        nav a.active {
+            color: var(--text);
+            border-bottom: 1px solid var(--text);
+        }
+
+        /* ── Sections ── */
+        section {
+            margin-bottom: 3.2rem;
+        }
+
+        h1 {
+            font-size: 1.55rem;
+            font-weight: 400;
+            line-height: 1.3;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+        }
+
+        h2 {
+            font-size: 0.72rem;
+            font-family: var(--font-mono);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--faint);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 0.15rem;
+        }
+
+        p {
+            margin-bottom: 0.9rem;
+            color: var(--text);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Header / About ── */
+        .about-block {
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-photo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: var(--rule);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--faint);
+            margin-top: 0.3rem;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        /* ── Meta row (affiliation, links) ── */
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.4rem;
+            font-size: 0.8rem;
+            font-family: var(--font-mono);
+            color: var(--muted);
+            margin-top: 1rem;
+        }
+
+        .meta a {
+            color: var(--muted);
+        }
+
+        .meta a:hover {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        .meta span::before {
+            content: "→ ";
+            color: var(--faint);
+        }
+
+        /* ── Papers ── */
+        .paper-list {
+            list-style: none;
+        }
+
+        .paper-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .paper-list li:first-child {
+            border-top: 1px solid var(--rule);
+        }
+
+        .paper-meta {
+            font-size: 0.78rem;
+            font-family: var(--font-mono);
+            color: var(--faint);
+            margin-top: 0.25rem;
+        }
+
+        .paper-authors {
+            font-size: 0.88rem;
+            color: var(--muted);
+            font-style: italic;
+            margin-top: 0.2rem;
+        }
+
+        .paper-links {
+            margin-top: 0.35rem;
+            display: flex;
+            gap: 0.9rem;
+        }
+
+        .paper-links a {
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            color: var(--muted);
+            border: 1px solid var(--rule);
+            padding: 0.1rem 0.55rem;
+            border-radius: 2px;
+        }
+
+        .paper-links a:hover {
+            color: var(--link);
+            border-color: var(--link);
+            text-decoration: none;
+        }
+
+        /* ── Projects / Software ── */
+        .project-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .project-item:first-of-type {
+            border-top: 1px solid var(--rule);
+        }
+
+        .project-tag {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-family: var(--font-mono);
+            padding: 0.05rem 0.45rem;
+            border: 1px solid var(--rule);
+            border-radius: 2px;
+            color: var(--faint);
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* ── Blog ── */
+        .blog-list {
+            list-style: none;
+        }
+
+        .blog-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0.65rem 0;
+            border-bottom: 1px solid var(--rule);
+            gap: 1rem;
+        }
+
+        .blog-list li:first-child {
+            border-top: 1px solid var(--rule);
+        }
+
+        .blog-date {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--faint);
+            white-space: nowrap;
+        }
+
+        /* ── Contact ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap: 0.4rem 1.5rem;
+            font-size: 0.88rem;
+        }
+
+        .contact-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--faint);
+            padding-top: 0.1rem;
+        }
+
+        /* ── Footer ── */
+        footer {
+            border-top: 1px solid var(--rule);
+            padding: 1.5rem 0 2.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--faint);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 520px) {
+            html {
+                font-size: 16px;
+            }
+
+            .about-block {
+                flex-direction: column-reverse;
+            }
+
+            .about-photo {
+                width: 68px;
+                height: 68px;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            .blog-list li {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site">
+
+        <!-- Navigation -->
+        <nav>
+            <a href="#" class="name">Prem S Rajanampalle</a>
+            <a href="#about">about</a>
+            <a href="#research">research</a>
+            <a href="#projects">projects</a>
+            <a href="#blog">blog</a>
+            <a href="#contact">contact</a>
+            <a href="resume.pdf" target="_blank">cv ↗</a>
+        </nav>
+
+        <!-- About -->
+        <section id="about">
+            <div class="about-block">
+                <div class="about-text">
+                    <h1>Prem S Rajanampalle</h1>
+                    <p class="tagline">Undergraduate Researcher · Neuroimaging · Machine Learning · NeuroAI</p>
+                    <p>
+                        I am a third-year undergraduate student at Woxsen University, Hyderabad, reading Computer Science
+                        with a specialisation in Artificial Intelligence and Machine Learning. My research sits at the
+                        intersection of deep learning and neuroimaging — specifically, how self-supervised and contrastive
+                        methods can be made clinically meaningful for the study of neurodegenerative disease.
+                    </p>
+                    <p>
+                        I currently work as a research intern at IIT Delhi under Dr. Tapan Gandhi, developing
+                        clinically-guided contrastive pretraining frameworks for structural MRI analysis. More broadly,
+                        I am drawn to questions about what representation learning can reveal about brain structure —
+                        and how to close the gap between statistical prediction and biological understanding.
+                    </p>
+                    <div class="meta">
+                        <span><a href="mailto:premsraj2006@gmail.com">premsraj2006@gmail.com</a></span>
+                        <span><a href="https://github.com/prem-s-raj" target="_blank">GitHub</a></span>
+                        <span><a href="https://openreview.net/profile?id=~Prem_S_Rajanampalle1" target="_blank">OpenReview</a></span>
+                        <span><a href="https://www.linkedin.com/in/prem-s-rajanampalle/" target="_blank">LinkedIn</a></span>
+                        <span><a href="resume.pdf" target="_blank">CV (PDF)</a></span>
+                    </div>
+                </div>
+                <!-- Replace this div with an <img> tag once you have a photo: -->
+                <!-- <img src="assets/photo.jpg" alt="Prem S Rajanampalle" class="about-photo"> -->
+                <div class="about-photo">photo</div>
+            </div>
+        </section>
+
+        <!-- Research / Papers -->
+        <section id="research">
+            <h2>Research</h2>
+            <ul class="paper-list">
+
+                <li>
+                    <h3><a href="https://openreview.net/profile?id=~Prem_S_Rajanampalle1">Clinically-Guided Contrastive
+                            Pretraining for Alzheimer's Disease Detection and Cognitive Score Prediction from 3D Brain
+                            MRI</a></h3>
+                    <p class="paper-authors">Siddhant Ujjain, Prem S Rajanampalle, Sandeep Kumar, Tapan K Gandhi</p>
+                    <p class="paper-meta">NeurIPS 2026 · Under Review</p>
+                    <div class="paper-links">
+                        <a href="https://openreview.net/profile?id=~Prem_S_Rajanampalle1">openreview</a>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects &amp; Software</h2>
+
+            <div class="project-item">
+                <h3>
+                    <a href="#">Research Alignment Platform</a>
+                    <span class="project-tag">active</span>
+                </h3>
+                <p>
+                    An agentic research environment that synchronizes code implementation, domain standards, and paper
+                    writing (.tex) within a single platform. Built for AI/ML/DL researchers. Powered by Claude Code.
+                    Researchers move from idea to reproducible result without leaving the environment.
+                </p>
+                <div class="paper-links" style="margin-top:0.5rem">
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>
+                    <a href="#">Kensho — Agentic AI for PTSD Trigger Identification</a>
+                    <span class="project-tag">active</span>
+                </h3>
+                <p>
+                    A multi-agent system that analyzes dream descriptions against DSM-5/ICD-11 clinical guidelines
+                    to detect hidden PTSD indicators. Semantic-parsing, trigger-detection, and automated reporting
+                    modules convert subjective dream content into structured clinical insights. Third runner-up,
+                    INNOVERSE hackathon.
+                </p>
+                <div class="paper-links" style="margin-top:0.5rem">
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>
+                    <a href="#">ADNI sMRI Alzheimer's Detection with 3D CNNs</a>
+                    <span class="project-tag">active</span>
+                </h3>
+                <p>
+                    A 3D-CNN classification pipeline for structural MRI data from ADNI (430 CN, 250 MCI subjects).
+                    Full preprocessing workflow — skull stripping, affine MNI normalization, z-score intensity scaling
+                    — followed by training of DenseNet-121 and ResNet variants via MONAI.
+                </p>
+                <div class="paper-links" style="margin-top:0.5rem">
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>
+                    <a href="#">EEG Signal Decomposition for Schizophrenia Classification</a>
+                    <span class="project-tag">active</span>
+                </h3>
+                <p>
+                    Comparative study of six decomposition techniques — DWT, CWT, WPD, Hilbert Transform, FFT, EMD —
+                    for EEG-based schizophrenia classification on the Poland Schizophrenia Dataset. Best accuracy of
+                    99.32% with Hilbert Transform features. Also explored Spiking Neural Networks for time-series
+                    modeling.
+                </p>
+                <div class="paper-links" style="margin-top:0.5rem">
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Blog / Writing -->
+        <section id="blog">
+            <h2>Writing</h2>
+            <ul class="blog-list">
+                <li>
+                    <a href="#">Life, Death, Liberation: An Optimization</a>
+                    <span class="blog-date">2026</span>
+                </li>
+                <li>
+                    <a href="#">Notes on Neuronal Dynamics Learning, Part 1</a>
+                    <span class="blog-date">2026</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <span class="contact-label">email</span>
+                <span><a href="mailto:premsraj2006@gmail.com">premsraj2006@gmail.com</a></span>
+                <span class="contact-label">github</span>
+                <span><a href="https://github.com/prem-s-raj"
+                        target="_blank">github.com/prem-s-raj</a></span>
+                <span class="contact-label">linkedin</span>
+                <span><a href="https://www.linkedin.com/in/prem-s-rajanampalle/"
+                        target="_blank">prem-s-rajanampalle</a></span>
+                <span class="contact-label">openreview</span>
+                <span><a href="https://openreview.net/profile?id=~Prem_S_Rajanampalle1"
+                        target="_blank">Prem S Rajanampalle</a></span>
+                <span class="contact-label">location</span>
+                <span>Hyderabad, India</span>
+            </div>
+            <p style="margin-top:1.2rem; font-size:0.88rem; color:var(--muted);">
+                I am open to research collaborations, feedback on preprints, and conversations about neuroimaging,
+                contrastive learning, and NeuroAI. Feel free to reach out.
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <span>Prem S Rajanampalle · 2026</span>
+            <span>last updated May 2026</span>
+        </footer>
+
+    </div>
+</body>
+
+</html>
