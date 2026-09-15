@@ -1,530 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prem S Rajanampalle — Researcher</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
-    <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prem S Rajanampalle - Resume</title>
+<style>
+    body {
+        font-family: Georgia, 'Times New Roman', serif;
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        color: #1a1a1a;
+        line-height: 1.5;
+        font-size: 15px;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        margin: 0 0 6px 0;
+        font-size: 26px;
+        letter-spacing: 1px;
+    }
+
+    header p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    header a {
+        color: #1a1a1a;
+        text-decoration: none;
+    }
+
+    header a:hover {
+        text-decoration: underline;
+    }
+
+    h2 {
+        font-size: 15px;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #1a1a1a;
+        padding-bottom: 3px;
+        margin-top: 24px;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 15px;
+        margin: 0;
+    }
+
+    .entry {
+        margin-bottom: 12px;
+    }
+
+    .entry-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+    }
+
+    .entry-header .title {
+        font-weight: bold;
+    }
+
+    .entry-header .date {
+        font-style: italic;
+        white-space: nowrap;
+    }
+
+    .subtitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        font-style: italic;
+        margin-bottom: 4px;
+    }
+
+    ul {
+        margin: 4px 0 0 0;
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    .project-title {
+        font-weight: bold;
+        margin-bottom: 2px;
+    }
+
+    p.line {
+        margin: 4px 0;
+    }
+
+    .skills-list p {
+        margin: 4px 0;
+    }
+
+    .skills-list strong {
+        font-weight: bold;
+    }
+
+    @media print {
+        body {
             padding: 0;
         }
-
-        :root {
-            --text: #1a1a18;
-            --muted: #5a5a54;
-            --faint: #9a9a92;
-            --rule: #d8d8d0;
-            --bg: #faf9f6;
-            --link: #2a4a8a;
-            --accent: #8a3a2a;
-            --font-body: 'EB Garamond', Georgia, serif;
-            --font-mono: 'JetBrains Mono', 'Courier New', monospace;
-            --max: 680px;
-        }
-
-        html {
-            font-size: 18px;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            padding: 0 1.5rem;
-        }
-
-        /* ── Layout ── */
-        .site {
-            max-width: var(--max);
-            margin: 0 auto;
-        }
-
-        /* ── Nav ── */
-        nav {
-            display: flex;
-            gap: 1.8rem;
-            padding: 2.2rem 0 1.6rem;
-            border-bottom: 1px solid var(--rule);
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-            align-items: baseline;
-        }
-
-        nav .name {
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--text);
-            text-decoration: none;
-            margin-right: auto;
-            letter-spacing: 0.01em;
-        }
-
-        nav a {
-            font-size: 0.83rem;
-            font-family: var(--font-mono);
-            color: var(--muted);
-            text-decoration: none;
-            letter-spacing: 0.02em;
-        }
-
-        nav a:hover {
-            color: var(--link);
-        }
-
-        nav a.active {
-            color: var(--text);
-            border-bottom: 1px solid var(--text);
-        }
-
-        /* ── Sections ── */
-        section {
-            margin-bottom: 3.2rem;
-        }
-
-        h1 {
-            font-size: 1.55rem;
-            font-weight: 400;
-            line-height: 1.3;
-            color: var(--text);
-            margin-bottom: 0.3rem;
-        }
-
-        h2 {
-            font-size: 0.72rem;
-            font-family: var(--font-mono);
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--faint);
-            margin-bottom: 1.2rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--rule);
-        }
-
-        h3 {
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--text);
-            margin-bottom: 0.15rem;
-        }
-
-        p {
-            margin-bottom: 0.9rem;
-            color: var(--text);
-        }
-
-        p:last-child {
-            margin-bottom: 0;
-        }
-
-        a {
-            color: var(--link);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* ── Header / About ── */
-        .about-block {
-            display: flex;
-            gap: 2.5rem;
-            align-items: flex-start;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-photo {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: var(--rule);
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-mono);
-            font-size: 0.65rem;
-            color: var(--faint);
-            margin-top: 0.3rem;
-        }
-
-        .tagline {
-            font-size: 0.9rem;
-            color: var(--muted);
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        /* ── Meta row (affiliation, links) ── */
-        .meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem 1.4rem;
-            font-size: 0.8rem;
-            font-family: var(--font-mono);
-            color: var(--muted);
-            margin-top: 1rem;
-        }
-
-        .meta a {
-            color: var(--muted);
-        }
-
-        .meta a:hover {
-            color: var(--link);
-            text-decoration: none;
-        }
-
-        .meta span::before {
-            content: "→ ";
-            color: var(--faint);
-        }
-
-        /* ── Papers ── */
-        .paper-list {
-            list-style: none;
-        }
-
-        .paper-list li {
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--rule);
-        }
-
-        .paper-list li:first-child {
-            border-top: 1px solid var(--rule);
-        }
-
-        .paper-meta {
-            font-size: 0.78rem;
-            font-family: var(--font-mono);
-            color: var(--faint);
-            margin-top: 0.25rem;
-        }
-
-        .paper-authors {
-            font-size: 0.88rem;
-            color: var(--muted);
-            font-style: italic;
-            margin-top: 0.2rem;
-        }
-
-        .paper-links {
-            margin-top: 0.35rem;
-            display: flex;
-            gap: 0.9rem;
-        }
-
-        .paper-links a {
-            font-size: 0.75rem;
-            font-family: var(--font-mono);
-            color: var(--muted);
-            border: 1px solid var(--rule);
-            padding: 0.1rem 0.55rem;
-            border-radius: 2px;
-        }
-
-        .paper-links a:hover {
-            color: var(--link);
-            border-color: var(--link);
-            text-decoration: none;
-        }
-
-        /* ── Projects / Software ── */
-        .project-item {
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--rule);
-        }
-
-        .project-item:first-of-type {
-            border-top: 1px solid var(--rule);
-        }
-
-        .project-tag {
-            display: inline-block;
-            font-size: 0.68rem;
-            font-family: var(--font-mono);
-            padding: 0.05rem 0.45rem;
-            border: 1px solid var(--rule);
-            border-radius: 2px;
-            color: var(--faint);
-            margin-left: 0.5rem;
-            vertical-align: middle;
-        }
-
-        /* ── Blog ── */
-        .blog-list {
-            list-style: none;
-        }
-
-        .blog-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 0.65rem 0;
-            border-bottom: 1px solid var(--rule);
-            gap: 1rem;
-        }
-
-        .blog-list li:first-child {
-            border-top: 1px solid var(--rule);
-        }
-
-        .blog-date {
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            color: var(--faint);
-            white-space: nowrap;
-        }
-
-        /* ── Contact ── */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: max-content 1fr;
-            gap: 0.4rem 1.5rem;
-            font-size: 0.88rem;
-        }
-
-        .contact-label {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--faint);
-            padding-top: 0.1rem;
-        }
-
-        /* ── Footer ── */
-        footer {
-            border-top: 1px solid var(--rule);
-            padding: 1.5rem 0 2.5rem;
-            font-family: var(--font-mono);
-            font-size: 0.68rem;
-            color: var(--faint);
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 520px) {
-            html {
-                font-size: 16px;
-            }
-
-            .about-block {
-                flex-direction: column-reverse;
-            }
-
-            .about-photo {
-                width: 68px;
-                height: 68px;
-            }
-
-            nav {
-                gap: 1rem;
-            }
-
-            .blog-list li {
-                flex-direction: column;
-                gap: 0.2rem;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
-
 <body>
-    <div class="site">
 
-        <!-- Navigation -->
-        <nav>
-            <a href="#" class="name">Prem S Rajanampalle</a>
-            <a href="#about">about</a>
-            <a href="#research">research</a>
-            <a href="#projects">projects</a>
-            <a href="#blog">blog</a>
-            <a href="#contact">contact</a>
-            <a href="resume.pdf" target="_blank">cv ↗</a>
-        </nav>
+<header>
+    <h1>PREM S RAJANAMPALLE</h1>
+    <p>
+        premsraj2006@gmail.com | +(91) 9368104112 |
+        <a href="#">GitHub</a> | <a href="#">LinkedIn</a>
+    </p>
+</header>
 
-        <!-- About -->
-        <section id="about">
-            <div class="about-block">
-                <div class="about-text">
-                    <h1>Prem S Rajanampalle</h1>
-                    <p class="tagline">Undergraduate Researcher · Neuroimaging · Machine Learning · NeuroAI</p>
-                    <p>
-                        I am a third-year undergraduate student at Woxsen University, Hyderabad, reading Computer Science
-                        with a specialisation in Artificial Intelligence and Machine Learning. My research sits at the
-                        intersection of deep learning and neuroimaging — specifically, how self-supervised and contrastive
-                        methods can be made clinically meaningful for the study of neurodegenerative disease.
-                    </p>
-                    <p>
-                        I currently work as a research intern at IIT Delhi under Dr. Tapan Gandhi, developing
-                        clinically-guided contrastive pretraining frameworks for structural MRI analysis. More broadly,
-                        I am drawn to questions about what representation learning can reveal about brain structure —
-                        and how to close the gap between statistical prediction and biological understanding.
-                    </p>
-                    <div class="meta">
-                        <span><a href="mailto:premsraj2006@gmail.com">premsraj2006@gmail.com</a></span>
-                        <span><a href="https://github.com/prem-s-raj" target="_blank">GitHub</a></span>
-                        <span><a href="https://openreview.net/profile?id=~Prem_S_Rajanampalle1" target="_blank">OpenReview</a></span>
-                        <span><a href="https://www.linkedin.com/in/prem-s-rajanampalle/" target="_blank">LinkedIn</a></span>
-                        <span><a href="resume.pdf" target="_blank">CV (PDF)</a></span>
-                    </div>
-                </div>
-                <!-- Replace this div with an <img> tag once you have a photo: -->
-                <!-- <img src="assets/photo.jpg" alt="Prem S Rajanampalle" class="about-photo"> -->
-                <div class="about-photo">photo</div>
-            </div>
-        </section>
+<h2>PROFILE SUMMARY</h2>
+<p class="line">
+    Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning, with a strong foundation in deep
+    learning, representation learning, and end-to-end ML/DL system design. Research interests span contrastive and self-supervised
+    learning, generative and agentic AI systems, and applying ML/DL to high-impact real-world domains. Seeking opportunities to
+    contribute in building complex systems that address meaningful social challenges, combining strong theoretical foundations with
+    scalable, real-world implementation.
+</p>
 
-        <!-- Research / Papers -->
-        <section id="research">
-            <h2>Research</h2>
-            <ul class="paper-list">
+<h2>RESEARCH INTERESTS</h2>
+<p class="line">Representation Learning | Contrastive Learning | Machine Learning | Deep Learning | Large Language Models | Agentic AI</p>
 
-                <li>
-                    <h3><a href="https://openreview.net/profile?id=~Prem_S_Rajanampalle1">Clinically-Guided Contrastive
-                            Pretraining for Alzheimer's Disease Detection and Cognitive Score Prediction from 3D Brain
-                            MRI</a></h3>
-                    <p class="paper-authors">Siddhant Ujjain, Prem S Rajanampalle, Sandeep Kumar, Tapan K Gandhi</p>
-                    <p class="paper-meta">NeurIPS 2026 · Under Review</p>
-                    <div class="paper-links">
-                        <a href="https://openreview.net/profile?id=~Prem_S_Rajanampalle1">openreview</a>
-                    </div>
-                </li>
-
-            </ul>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects">
-            <h2>Projects &amp; Software</h2>
-
-            <div class="project-item">
-                <h3>
-                    <a href="#">Research Alignment Platform</a>
-                    <span class="project-tag">active</span>
-                </h3>
-                <p>
-                    An agentic research environment that synchronizes code implementation, domain standards, and paper
-                    writing (.tex) within a single platform. Built for AI/ML/DL researchers. Powered by Claude Code.
-                    Researchers move from idea to reproducible result without leaving the environment.
-                </p>
-                <div class="paper-links" style="margin-top:0.5rem">
-                    <a href="#">GitHub</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3>
-                    <a href="#">Kensho — Agentic AI for PTSD Trigger Identification</a>
-                    <span class="project-tag">active</span>
-                </h3>
-                <p>
-                    A multi-agent system that analyzes dream descriptions against DSM-5/ICD-11 clinical guidelines
-                    to detect hidden PTSD indicators. Semantic-parsing, trigger-detection, and automated reporting
-                    modules convert subjective dream content into structured clinical insights. Third runner-up,
-                    INNOVERSE hackathon.
-                </p>
-                <div class="paper-links" style="margin-top:0.5rem">
-                    <a href="#">GitHub</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3>
-                    <a href="#">ADNI sMRI Alzheimer's Detection with 3D CNNs</a>
-                    <span class="project-tag">active</span>
-                </h3>
-                <p>
-                    A 3D-CNN classification pipeline for structural MRI data from ADNI (430 CN, 250 MCI subjects).
-                    Full preprocessing workflow — skull stripping, affine MNI normalization, z-score intensity scaling
-                    — followed by training of DenseNet-121 and ResNet variants via MONAI.
-                </p>
-                <div class="paper-links" style="margin-top:0.5rem">
-                    <a href="#">GitHub</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3>
-                    <a href="#">EEG Signal Decomposition for Schizophrenia Classification</a>
-                    <span class="project-tag">active</span>
-                </h3>
-                <p>
-                    Comparative study of six decomposition techniques — DWT, CWT, WPD, Hilbert Transform, FFT, EMD —
-                    for EEG-based schizophrenia classification on the Poland Schizophrenia Dataset. Best accuracy of
-                    99.32% with Hilbert Transform features. Also explored Spiking Neural Networks for time-series
-                    modeling.
-                </p>
-                <div class="paper-links" style="margin-top:0.5rem">
-                    <a href="#">GitHub</a>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Blog / Writing -->
-        <section id="blog">
-            <h2>Writing</h2>
-            <ul class="blog-list">
-                <li>
-                    <a href="#">Life, Death, Liberation: An Optimization</a>
-                    <span class="blog-date">2026</span>
-                </li>
-                <li>
-                    <a href="#">Notes on Neuronal Dynamics Learning, Part 1</a>
-                    <span class="blog-date">2026</span>
-                </li>
-            </ul>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-grid">
-                <span class="contact-label">email</span>
-                <span><a href="mailto:premsraj2006@gmail.com">premsraj2006@gmail.com</a></span>
-                <span class="contact-label">github</span>
-                <span><a href="https://github.com/prem-s-raj"
-                        target="_blank">github.com/prem-s-raj</a></span>
-                <span class="contact-label">linkedin</span>
-                <span><a href="https://www.linkedin.com/in/prem-s-rajanampalle/"
-                        target="_blank">prem-s-rajanampalle</a></span>
-                <span class="contact-label">openreview</span>
-                <span><a href="https://openreview.net/profile?id=~Prem_S_Rajanampalle1"
-                        target="_blank">Prem S Rajanampalle</a></span>
-                <span class="contact-label">location</span>
-                <span>Hyderabad, India</span>
-            </div>
-            <p style="margin-top:1.2rem; font-size:0.88rem; color:var(--muted);">
-                I am open to research collaborations, feedback on preprints, and conversations about neuroimaging,
-                contrastive learning, and NeuroAI. Feel free to reach out.
-            </p>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <span>Prem S Rajanampalle · 2026</span>
-            <span>last updated May 2026</span>
-        </footer>
-
+<h2>EDUCATION</h2>
+<div class="entry">
+    <div class="entry-header">
+        <span class="title">Woxsen University, Hyderabad</span>
+        <span class="date">Aug 2023 – Mar 2027</span>
     </div>
-</body>
+    <div class="subtitle">
+        <span>B.Tech in Computer Science (Artificial Intelligence and Machine Learning)</span>
+        <span>CGPA: 9.31/10</span>
+    </div>
+</div>
 
+<h2>RESEARCH EXPERIENCE</h2>
+<div class="entry">
+    <div class="entry-header">
+        <span class="title">Research Intern, Indian Institute of Technology (IIT) Delhi, New Delhi, India</span>
+        <span class="date">Dec 2025 – Present</span>
+    </div>
+    <div class="subtitle">
+        <span>Mentors: Dr. Tapan Gandhi and Dr. Sandeep Kumar</span>
+    </div>
+    <ul>
+        <li>Developed Clinically-Guided Contrastive Pretraining (CGCP) end to end, from data preprocessing through all experiments (main
+        experiments, ablations, and additional appendix experiments): a multi-objective self-supervised learning framework for
+        Alzheimer's disease detection from 3D brain MRI that jointly optimizes MMSE regression, CDR-guided contrastive learning, and
+        variance regularization.</li>
+        <li>Pretrained CGCP on OASIS-2 (150 subjects aged 60–96, each scanned on 2–5 visits, 373 total sessions, 216 with paired MMSE
+        and CDR annotations, ~55% CN and ~45% demented) and fine-tuned on OASIS-1 (416 subjects aged 18–96, cross-sectional, split
+        60% train, 20% validation, 20% test at the subject level to prevent data leakage), achieving AUC 0.744 ± 0.057 on AD vs. CN
+        classification, outperforming supervised-only and standard SSL baselines (SimCLR, BYOL, MAE).</li>
+        <li>Developing an atlas-free brain parcellation GNN that jointly predicts Alzheimer's Disease diagnosis and cognitive scores from
+        structural MRI, replacing fixed brain atlases with task-optimised soft regions learned end-to-end.</li>
+        <li>Implementing a multi-task pipeline combining 3D U-Net encoding, learned soft parcellation (K=64 regions), a GATv2 graph
+        attention network, and Bayesian optimization for loss-weight search across the OASIS-1/OASIS-2 datasets.</li>
+        <li>Building Concept-NeuroGraph, an interpretable graph neural network for diagnosing Alzheimer's disease and frontotemporal
+        dementia from resting-state EEG, encoding multi-band functional connectivity graphs with a shared-weight GIN encoder and
+        routing predictions through a hybrid rule-based and learned concept bottleneck for clinical auditability, with five training
+        objectives balanced via GradNorm.</li>
+        <li>Building the full evaluation methodology for Concept-NeuroGraph: repeated cross-validation across two recording conditions
+        and five diagnostic tasks, with a complete baseline suite.</li>
+    </ul>
+</div>
+
+<h2>RESEARCH PROJECTS</h2>
+
+<div class="entry">
+    <p class="project-title">3D Deep Learning Pipeline for Low-Label Medical Image Classification | ADNI Dataset</p>
+    <ul>
+        <li>Built a full end-to-end 3D deep learning pipeline covering preprocessing (skull stripping, affine registration, intensity
+        normalization), model training, and evaluation on a challenging, class-imbalanced binary classification task (430 vs. 250
+        subjects).</li>
+        <li>Trained and compared 3D architectures (DenseNet-121, ResNet-152/18/10); ResNet18 3D achieved the highest accuracy at
+        ~70%, with models using skip connections consistently outperforming those without.</li>
+    </ul>
+</div>
+
+<div class="entry">
+    <p class="project-title">EEG Time-Series Classification: Signal Decomposition Benchmark | Poland Schizophrenia Dataset (RepOD)</p>
+    <ul>
+        <li>Designed a comparative ML benchmark across six signal decomposition methods (DWT, CWT, WPD, FFT, EMD, Hilbert
+        Transform) for multi-class time-series classification on EEG recordings from 28 patients (14 healthy, 14 schizophrenic), recorded
+        using the 10-20 standard electrode placement.</li>
+        <li>Extracted statistical features and evaluated classifiers with 5-fold cross-validation across 210 experimental configurations,
+        reaching 99.32% accuracy with the Hilbert Transform configuration; identified Hilbert Transform decomposition combined with
+        XGBoost and Quantile Transformer scaling as the best-performing pipeline for EEG-based schizophrenia detection.</li>
+        <li>Also explored Spiking Neural Networks (Leaky Integrate-and-Fire, via snnTorch) for temporal sequence modelling.</li>
+    </ul>
+</div>
+
+<div class="entry">
+    <p class="project-title">Quantum-Inspired Evolutionary Algorithm (QIEA) for Feature Selection | Benchmark Datasets</p>
+    <ul>
+        <li>Designed a pipeline using QIEA (Quantum-Inspired Evolutionary Algorithm) for automated feature selection, evaluated across
+        eight ML classifiers (LR, NB, KNN, DT, RF, XGB, AdaBoost, SVC) on the Wisconsin Breast Cancer dataset.</li>
+        <li>Achieved 99.5% accuracy with QIEA-selected features, compared to ~95% using all features.</li>
+    </ul>
+</div>
+
+<div class="entry">
+    <p class="project-title">Multivariate Decoding of Theory of Mind Networks Using HCP fMRI Data</p>
+    <ul>
+        <li>Investigated neural correlates of Theory of Mind using Human Connectome Project fMRI data from 100 subjects and
+        Frith-Happé animations, where participants watched short animations of geometric shapes and judged whether they were
+        interacting socially.</li>
+        <li>Modeled trial-level brain activity across 360 regions using a generalized linear model with hemodynamic response function,
+        isolating per-region activation estimates for the 100 subjects.</li>
+        <li>Applied multivariate random forest decoding across the 360 regions, achieving 85% accuracy in classifying mental interaction
+        vs. random motion.</li>
+        <li>Findings suggest that the joint, multivariate activity of mentalization regions together encodes information relevant to
+        mentalization, corroborating known Theory of Mind regions: temporoparietal junction (TPJ), medial prefrontal cortex (mPFC),
+        and inferior and superior temporal sulcus (STS).</li>
+    </ul>
+</div>
+
+<div class="entry">
+    <p class="project-title">Kensho: Multi-Agent NLP System for Psychological Indicator Detection | INNOVERSE Hackathon</p>
+    <ul>
+        <li>Built the agentic workflow for a multi-agent AI system using the CrewAI framework to perform semantic parsing on free-form
+        text and detect latent psychological indicators.</li>
+        <li>Gathered PTSD trigger guidelines from DSM-5 and ICD-11 and synthesized them into a markdown file for the agents to
+        reference.</li>
+        <li>Used Llama-2 7B paired with LoRA (Low-Rank Adaptation) to reduce the number of trainable parameters, with the context
+        window reduced from 4096 to 1024.</li>
+        <li>Evaluated the system on the DreamBank dataset across 10 dreams' interpretations, using BERT to encode true and predicted
+        interpretations and cosine similarity to measure the match between them.</li>
+    </ul>
+</div>
+
+<div class="entry">
+    <p class="project-title">LLM-Powered Adaptive Learning Tool | LangChain · OpenAI API · Streamlit</p>
+    <ul>
+        <li>Developed an interactive LLM application generating automated summaries, MCQs, and video summaries for multi-modal
+        educational support, with end-to-end deployment via Streamlit.</li>
+    </ul>
+</div>
+
+<h2>PATENTS</h2>
+<ul>
+    <li>Agentic AI-Based System for Automated Literature Analysis and Survey Synthesis – Patent Publication (India, Application No.
+    202641083772 A, Publication Date: 10/07/2026)</li>
+</ul>
+
+<h2>PUBLICATIONS</h2>
+<ul>
+    <li>Ujjain, S., Rajanampalle, P. S., Kumar, S., &amp; Gandhi, T. K. (manuscript in preparation). Clinically-guided contrastive pretraining
+    for Alzheimer's disease detection and cognitive score prediction from 3D brain MRI.</li>
+    <li>Ujjain, S., Rajanampalle, P. S., Kumar, S., &amp; Gandhi, T. K. (manuscript in preparation). Concept-guided NeuroGraph reasoning for
+    clinically auditable dementia classification from EEG.</li>
+</ul>
+
+<h2>AWARDS &amp; ACHIEVEMENTS</h2>
+<ul>
+    <li>Recognition: Top 5% (of 182 qualified students), NPTEL Computational Neuroscience — Prof. Sharba Bandyopadhyay, IIT
+    Kharagpur</li>
+    <li>Award: 3rd Runner-Up, INNOVERSE Hackathon — ₹10,000 cash prize for the Kensho multi-agent NLP system</li>
+</ul>
+
+<h2>CERTIFICATIONS</h2>
+<ul>
+    <li>Neuromatch Academy – Computational Neuroscience | 06 Jul 2026 – 28 Jul 2026</li>
+    <li>Machine Learning Specialization — Andrew Ng, Stanford Online / Coursera | May 2021</li>
+    <li>Unsupervised Learning, Recommenders &amp; Reinforcement Learning — DeepLearning.AI | Nov 2022</li>
+    <li>EEG/ERP Signal Analysis with Python (MNE) — Udemy | 03 Jul 2024</li>
+    <li>Introduction to Large Language Models — Google Cloud | Apr 2023</li>
+    <li>Natural Language Processing with Classification and Vector Spaces — DeepLearning.AI | Nov 2021</li>
+    <li>TensorFlow Developer Certificate — Udemy | Jun 2021</li>
+</ul>
+
+<h2>WORKSHOPS</h2>
+<ul>
+    <li>Computational Neuroscience Summer School, Neuromatch Academy - Completed a 3-week summer school covering modern
+    machine learning and deep learning architectures and statistical techniques for investigating hypotheses related to brain data |
+    06 Jul 2026 – 28 Jul 2026</li>
+    <li>Neuroscience and Brain Mapping, IISc Bangalore - Used MNE-Python to analyze EEG signals using Python | Nov 2025</li>
+</ul>
+
+<h2>TECHNICAL SKILLS</h2>
+<div class="skills-list">
+    <p><strong>Languages &amp; Libraries:</strong> Python, NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn, OCTAVE</p>
+    <p><strong>Deep Learning:</strong> CNNs, RNNs, LSTMs, ANNs, 3D CNNs (MONAI), Spiking Neural Networks (LIF), TensorFlow, PyTorch, Keras,
+    snnTorch</p>
+    <p><strong>Classical Machine Learning:</strong> Linear &amp; Logistic Regression, Decision Trees, Random Forest, SVM, KNN, PCA, Naïve Bayes,
+    XGBoost, AdaBoost</p>
+    <p><strong>Representation Learning:</strong> Self-supervised learning, Supervised fine-tuning, Contrastive learning</p>
+    <p><strong>NLP / LLM / Agentic AI:</strong> NLTK, HuggingFace Transformers, LangChain, CrewAI, OpenAI API, Streamlit</p>
+    <p><strong>Signal &amp; Image Processing:</strong> EEG (MNE-Python), fMRI/MRI (FSL, Nipype, FLIRT), DWT, CWT, FFT, EMD, Hilbert Transform</p>
+    <p><strong>Optimization:</strong> Genetic Algorithms, Quantum-Inspired Evolutionary Algorithms (QIEA)</p>
+</div>
+
+<h2>EXTRACURRICULAR ACTIVITIES</h2>
+<ul>
+    <li>Author: "Machine Learning: Introduction to Supervised and Unsupervised Learning Algorithms Using Python", a book aimed at
+    first-time learners</li>
+    <li>Course Creator: 4-hour Python Programming course on Udemy — 100+ enrolments, 4.2/5 rating, learners from 20 countries</li>
+</ul>
+
+</body>
 </html>
